@@ -1,0 +1,461 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TwitterNew" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="MessageDT" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="Username" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1140,3185.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>TwitterNew_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TwitterNew" sap:VirtualizedContainerService.HintSize="790.4,3120.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="TwitterAction" />
+      <Variable x:TypeArguments="x:String" Name="TweetContent" />
+      <Variable x:TypeArguments="x:String" Name="RepliedPerson" />
+      <Variable x:TypeArguments="x:String" Name="TheMessage" />
+      <Variable x:TypeArguments="ui:UiElement" Name="TwBrowser" />
+      <Variable x:TypeArguments="x:Boolean" Name="FbCheckPost" />
+      <Variable x:TypeArguments="x:Boolean" Name="FbCheckReply" />
+      <Variable x:TypeArguments="x:Boolean" Name="FbCheckNumber" />
+      <Variable x:TypeArguments="x:Boolean" Name="LogCheck" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: New Tab" sap:VirtualizedContainerService.HintSize="728,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="6ffe6e08-2549-445b-b08a-558a594185b0" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,572.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Address and search bar'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="6ffe6e08-2549-445b-b08a-558a594185b0" Text="www.twitter.com" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="186, 59, 1443, 30" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Address and search bar'" FullSelectorArgument="&lt;ctrl name='New Tab - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='New Tab - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' automationid='' /&gt;" Guid="455abe04-15cd-4762-8bc1-e060eb47f7db" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABacAAAAiCAYAAABLPGXFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFJSURBVHhe7dgxDcNQFATBjyOVI4WhaRhQIKUPgOfGjQF4qxlppcNw67X/RpIkSZIkSZKksnV8/yNJkiRJkiRJUtkaAAAAAACIOacBAAAAAMjdzunt/bkWAAAAAAA8xzkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEDOOQ0AAAAAQO52TgMAAAAAQME5DQAAAABAzjkNAAAAAEDOOQ0AAAAAQM45DQAAAABAzjkNAAAAAEBs5gSmDp43WOtiTgAAAABJRU5ErkJggg==" InformativeScreenshot="a78624553c67a84ad552b1854b5ec479.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Address and search bar'" sap:VirtualizedContainerService.HintSize="387.2,199.2" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="6ffe6e08-2549-445b-b08a-558a594185b0" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="186, 59, 1443, 30" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Address and search bar'" FullSelectorArgument="&lt;ctrl name='New Tab - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='New Tab - Google Chrome' role='pane' /&gt;&lt;ctrl name='Address and search bar' role='editable text' automationid='' /&gt;" Guid="5028deb7-b2dd-40ee-bdf8-7a386440a038" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABacAAAAiCAYAAABLPGXFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAE2SURBVHhe7dhBEYBADMDA6sAmNhCEJP4I6LnIa3cmJjLX/a0kSZIkSZIkSWXzvP9KkiRJkiRJklQ2CwAAAAAAMXMaAAAAAICcOQ0AAAAAQM6cBgAAAAAgZ04DAAAAAJAzpwEAAAAAyJnTAAAAAADkzGkAAAAAAHLmNAAAAAAAOXMaAAAAAICcOQ0AAAAAQM6cBgAAAAAgZ04DAAAAAJAzpwEAAAAAyJnTAAAAAADkzGkAAAAAAHLmNAAAAAAAOXMaAAAAAICcOQ0AAAAAQM6cBgAAAAAgZ04DAAAAAJAzpwEAAAAAyJnTAAAAAADkzGkAAAAAAHLmNAAAAAAAOXMaAAAAAICcOQ0AAAAAQM6cBgAAAAAgZ04DAAAAAJAzpwEAAAAAyJnTAAAAAADkzGkAAAAAAGK7Bzoh3Hfs5hhYAAAAAElFTkSuQmCC" InformativeScreenshot="bd52eff39f715820a0108539aa637e2b.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='New Tab - Google Chrome' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+            </uix:NKeyboardShortcuts>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="785d1222141d8bb38a7161631e4cad5a.png" Selector="&lt;html app='chrome.exe' title='New Tab' /&gt;" Title="New Tab - Google Chrome" Url="chrome://newtab/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Explore / Twitter" sap:VirtualizedContainerService.HintSize="728,2916" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OutUiElement="[TwBrowser]" ScopeGuid="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="694.4,2699.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists 'A  /login'" Exists="[LogCheck]" sap:VirtualizedContainerService.HintSize="632,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="478dc8a2-ddfa-445e-ac26-dcc2616a4bb2" InformativeScreenshot="0508da0de9977c2a1de59cdd44c7c104" Selector="&lt;webctrl tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[LogCheck]" sap:VirtualizedContainerService.HintSize="632,512.8" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="376.8,247.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Log in'" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://twitter.com/?logout=1683647216159" DesignTimeRectangle="1510, 962, 95, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='css-4rbku5 css-18t94o4 css-1dbjc4n r-1niwhzg r-sdzlij r-1phboty r-rs99b7 r-1loqt21 r-2yi16 r-1qi8awa r-1ny4l3l r-ymttw5 r-o7ynqc r-6416eg r-lrvibr' aaname='Log in' check:innerText='Log in' /&gt;" Guid="dca73fc9-3a94-4e14-a8e1-50738eeef43f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGMAAAAxCAYAAADOfRdpAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARsSURBVHhe7Zw7ixRBFEb9I2JiIopgJCiCmCgYaGYiiIEoIvhXzBVREZ+oGIiKr8TYWMzF0J0X6IqWc3a9zd3aW93V09U93WMVHHC6qnvmfl+9q9cdO6+vuUw/yGb0iGRm7Lszckcfjd3p5xN39uXUXXgzc5ffzdyV96sD8RAX8REn8RK3pcciNDJjz62RO/5k4s6/nrlzr6bu5LOJO/xg7PbPf+Dum2tu1w37vqFCPMRFfMRJvMRN/OiAHtZ9sSxkxt7bo42acfHtzJ14OklaO4YI8aMDeqAL+ljlqqhtBjXg0vxLjz0er1zNbwp6oAv6oJNVpoxoM3CfvvLU3HmaqlUmswn6oBN61ek1osw4eG+8MXgdeTg28zM26IVu6Gfl+1SacWg+UNEXHrj7f48Li4Ju6IeOVr6m1Awc5UHMHqz8TBzoh45VLSRoBn0dTSy3iDSgI3qWjSFBMxh88hiRFvREVysPTDOYljEbsPIyzUDX0LR3mxksWJgn5+lrO6Ar+loLw21msIJk4eJfz6QDfdHZv77FDPZWGPXzyrpd0Bed/b2sLWbQl7HHoq9l2gGd/bFjixnsPtZZvg+RL99/O9Jk/Y+7+mFmlukCdEZvfa0wg0y2g3VmCq59+uHWN+N3H7/+Mst0xZkXU/dt+u/HzNP9zz/Ncl2B3rryF2ZwUML+vHxORddm8B0kREf8UP6yWwagN7rL58IMRncOTORzKro0g5ouKWRGn0BvPasqzGBl2MYeVF0zpE+XxL08I6YsqcoEa8zQvxFDpfVI4h7/OSlAb70iL8zgbLeNhV6sGQiDQKGk79VlRSg9HpSJV2WG5PupjVaN3ugunwsz2MRqY30Ra4YWQQZWLbBuIdId6Wtl1zVVZpDk+/X1Nro99EZ3+VyYwdsP8u+U6IBCZlg1XdD3Sx7PIfmih65rqszwv98qnxKtey9aRlkZy6jYaxaWuGXf36YZwZaxzDEj1gzdVeguTCfpYkL0yYzgmLHM2ZQW3K/V+n7Jk/KLCNQnM4KzqWWvMyRoUtUALs8cuhnBdUYXK3AricgESsChpEWqemaZcH0yI7gC72JvykpihpTXLYTk5wtV5oXE65MZwb0pGMquLYKRrLl/zFqjD6BzcNcWhnCeoVuEX4tB1/KqmdUyqTzPGMpJX6jr0AM+ZfQ9fQJ9K0/6gNF9CGfg0lX5qe/dE0SdgUN+O6Rd0DX67RCgL8vvTbVDrfemBFaG+Y3CtCz0RiEw9WITK79rm4ZG79pCfgs9DeiHjgu/hS7kv89oBrqhX+O/zxBwlCaWx5B6oBe6VbUIIcoMoK9j8GE2kKe95aAPOqFXne2laDMEpmXMk1m49H2l3jXogS7oE5q+llHbDGDBwgqSvpA9ljruryLEjw7ogS7Wgi6GhcwQ2FuhBrD7yHYw+/McmDB7oKmuWsshHuIiPuIkXuImfnTw95rq0sgMDbWDgxJqBn0lZ7sMXvr/3hg6xENcxEecxJuyV0hmRqY52YzesOb+AiA9YxLazf2kAAAAAElFTkSuQmCC" InformativeScreenshot="2a38f65d9399c0b41b47016991d3f42f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Explore / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1531, 972, 53, 23" ElementType="Text" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl aaname='Log in' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log in' tag='SPAN' type='' class='css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0' check:innerText='Log in' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADkAAAAbCAYAAADGfCe4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFtSURBVFhH7ZU9bgIxEIVzkZwrx+Aq6XMATpCahpoapY9SBgmQ+BE4eQpPeozGawPrNVn2Sa+xx+P5PF7v0/PbIvTdA2RfPED2xQNkX3zXkB/fhwAtd8cwmqzdmByfQb7ONmH3lzdMP/dngV375X0VvlanYn41nm/duBxXhcQeEGAAFZv/t51EZ6gYZFu+CZLfDIW1yJETC6XgvG9Sa8RBsdsU1tg8V0FiQ2wck67VWBag35tXFJ2C5LyVrf0qSE3OB0EL147yWupY07g6BQlxfx23N+RiSK8ztK7nHPJAFiY2rk5B2v29ePhiyKYY7wByxzx7RTft3zmkXhm9yipetZirQSqI7YKu5xzj7cY5rgYJMxmUeniY8y4hPbF4JECimHTzVM4m+KqQjNeOQnaeTh1KDLQIZAmjEMj+u+Ccf2UbLgqpHbSnDmtXUi/tLS7eydgV0ocKMbqmbReHhHllrUpfU7oTyNp+AMhF+AE4SaEBqnD77gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="632,52.8" sap2010:WorkflowViewState.IdRef="Delay_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Delay>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'DIV'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="632,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Text="@Ga3farBot2001" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://twitter.com/i/flow/login" DesignTimeRectangle="782, 618, 373, 50" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div' idx='2' parentid='layers' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='css-1dbjc4n r-18u37iz r-16y2uox r-1wbh5a2 r-1wzrnnt r-1udh08x r-xd6kpl r-1pn2ns4 r-ttdzmv' parentid='layers' tag='DIV' aaname='' /&gt;" Guid="1f8f76b0-971f-45d3-9f47-664561788680" ImageBase64="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" InformativeScreenshot="956b45992a8c78f952523941c9946411.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in to Twitter / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="632,52.8" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://twitter.com/i/flow/login" DesignTimeRectangle="802, 703, 333, 43" DesignTimeScaleFactor="1.25" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='11' parentid='layers' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0' parentid='layers' tag='DIV' aaname='' check:innerText='Next' /&gt;" Guid="72b8f052-9229-4b55-987e-7965b20c26a5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVEAAAAvCAYAAABaKflHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKkSURBVHhe7dw9alRRFMDx2YGNKdKkS5Ema0iRIo2FhVuIROJCBHERIlYiLsHgBtRGLVWIjalSxebJGXLl5Pomfpw7FvI78CMz7zPVn/tmYBaTMcaYv57F4dHxtLd/MG3v7E4bm1vTjZubAPxC9DK6uZjbCcDvEVGAAhEFKBBRgAIRBSgQUYACEQUoEFGAAhEFKBBRgAIRBSgQUYACEQUoEFGAAhEFKBBRhnv3/sPlz9VO0/n5+XT33v0r+2/dvjOdnn5Z7o9j8751aP/Py5NXs/uhQkQZLkc0po/Xv4zog4ePpouLb8t7iSjrIKIM10c0IhYxa/tFlP+JiDJci+jXs7OlmBzL6yKa97WJ97E99uco9nGOSLb5+OnzT9dpEx8xtHOgSkQZrkU0Ivbs+Yvl6xy8VRHNgewnnx+fsUYIY9r5+dzYNhfjNiLKSCLKcDmiEbwWs/gbcZuLaN6Wv4yaC2Z4/OTpcltMvG73zOeGHFeP86yDiDJcjmjEsQ/eXERz7OKYfL32mN4HMoczzs2r1UZEWTcRZbg+ojma8TevTltEc2hXTR/JvEqNmYukiLJuIspwfURjW45ZfE46IqL5mjH5fnPHiCjrIKIMNxfRvH3uW/scu/5xfk5ehb5+8/bH6z6UIsq6iSjDrYpov3KMaRHNj/z9Z58Rv3Zc0+4R14vrxjH5fTsux3ZupQpVIspwqyIaWuza5DjORTZPu15+9G+ry1WxzHFuE8e1e0KViDLcdRHtvwzqV5hz0curyxzQ/vp5X17N9tcUUUYSUYACEQUoEFGAAhEFKBBRgAIRBSgQUYACEQUoEFGAAhEFKBBRgAIRBSgQUYACEQUoEFGAgsXh0fG0t38wbe/sThubW7MHAXBV9DK6ubj8nVpjjDF/PNP0HWsNiSK//6T7AAAAAElFTkSuQmCC" InformativeScreenshot="7a7d58ef0e9c2bd5f44fee9594aeb22a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in to Twitter / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="632,52.8" sap2010:WorkflowViewState.IdRef="Delay_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Delay>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Requirements_2024'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="632,52.8" sap2010:WorkflowViewState.IdRef="NTypeInto_3" IsPassword="True" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Text="Requirements_2024" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://twitter.com/i/flow/login" DesignTimeRectangle="695, 538, 548, 55" DesignTimeScaleFactor="1.25" ElementType="InputBoxPassword" FriendlyName="'Requirements_2024'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;label&amp;gt;div&amp;gt;div' idx='2' parentid='layers' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='css-1dbjc4n r-18u37iz r-16y2uox r-1wbh5a2 r-1wzrnnt r-1udh08x r-xd6kpl r-1pn2ns4 r-ttdzmv' parentid='layers' tag='DIV' aaname='' /&gt;" Guid="381cb4be-00d9-47f1-9526-3066b35485f5" ImageBase64="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" InformativeScreenshot="8b0fb6f385d1e089b98bb747f66ce22e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in to Twitter / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="705, 555, 494, 25" ElementType="InputBoxPassword" FriendlyName="'Requirements_2024'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='r-30o5oe r-1niwhzg r-17gur6a r-1yadl64 r-deolkf r-homxoj r-poiln3 r-7cikom r-1ny4l3l r-t60dpp r-1dz5y72 r-fdjqy7 r-13qz1uu' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAfIAAAAdCAYAAABR9O4zAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKgSURBVHhe7do7axRRGIdxv4GNjdikSWErIqJCihQBBS0CFjaiiLZCIN5QEEFQjMErViJ24t3voMFoaRovKQ3GXeNC1k3cyyv/szNrJrs5U7+c5wfDzubNHE61Dzs7mwwAALhFyAEAcIyQJ2zzlq3ZGQDAK0KeMEIOAP4R8oQRcgDwj5AnjJADgH+EPGGEHAD8I+QJI+QA4B8hTxghBwD/CHnCCDkA+EfIE0bIAcA/Qp4wQg4A/hHyhBFyAPCvL+TtdttqtZo1m83sL0V/Gg1bXl7O3hXpGl2rNQbRdbp+kNi6ZXuKrcue/lu/LiEHAP8KIf+xuGhHj58MH/A7d++zt+9msolZp9OxZy9e2dDw9jA/c/6i1ev1bGr2+ctXG9t/MMz0qvc5heXWnXu2bWg4HDrPY1O2bmxPsXWFPXVttK7+FwDgWyHkT54+Dx/u+TExec4aKythVqlWbfzwkd5MQZj98DHMFJnrU9OFa6emb4eZKFZ7R0Z7s5HRMfs2Px9msXUltqfYuuypfE86BwD4Vgj5w0ePex/2Ok5PTPZuxX5fWLADh8YL85n3s2HWarXs8pWrhdm1GzfDTD7NzdmOXXt6M0VFcZHYuhLbU2xd9lS+J50DAHwrhFzf0vLbvrqF+/L1m2zSjdDd+w/CN0HNj504ZT8rlWxqISq6pauZXtdGRkE5e+FSmOnQeR6ZsnVje4qtK+ypa6N1dQ4A8K3vYbfV1b9Wrf4a+ECVbg3rYaqlpd+F331zioOuzeOzlh7E0nU61j/kVbZubE+xdYU9dQ1al5ADgH99IUc6CDkA+EfIE0bIAcA/Qp4wQg4A/hHyhBFyAPCPkCeMkAOAf4Q8YYQcAPwj5Akj5ADgHyFPGCEHAP8IOQAAjhFyAADcMvsHlyDzle12PuYAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Log in'" sap:VirtualizedContainerService.HintSize="632,52.8" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://twitter.com/i/flow/login" DesignTimeRectangle="735, 838, 468, 63" DesignTimeScaleFactor="1.25" FriendlyName="'Log in'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='3' parentid='layers' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0' parentid='layers' tag='DIV' aaname='' check:innerText='Log in' /&gt;" Guid="76c3a5ef-9f9e-44eb-a50f-2e3791e5f27a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAdgAAABDCAYAAAA/DxStAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAT4SURBVHhe7d3ZqxZ1GMBx/4Nuuoluuumimy7qwgsvIigoKtoUiS4CKS1bQNo0QymiMk2LEjEzsUKzxaXMLSqX1Cgr93JPcYWOKe7rL57BOZz3OCffM/jjPcjngQ+HM+/M+87dl5l3Zt5eyRhjjDGXfXpddfU1CQC4vAQWADIQWADIQGABIAOBBYAMBBYAMhBYAMhAYAEgA4EFgAwEFgAyEFgAyEBgASADgQWADAQWADIQWADIQGABIAOBBYAMBBYAMhBYAMhAYAEgA4EFgAwEFgAyEFgAyEBg4Qp2170PpkmTp6RRY8amG268qXIdIA+BhSvUrbffmbbv2JFizp8/n+YvWFS5HpCHwEJNH386rYhXzJ9/bapcp5UeGTAwHTz474U9TGnDxo2V6wF5CCzU1OrA9u5zS3p00ODiSLXq9Wuvuz7NX7gonTlzJh0+fDi9MWpM5XpAHgILNbUysFOmfpJOnDxZfPbiJcsq1wFaS2ChplYF9tkXhqWjR49e+GSBhZ5KYKGm7gY2TtmOnzAx7du/P509e7bYLk7fbt6yNY189bXKbR7o91D65ddV6fjx48X6cbHSyVOn0unTp9P0zz4v3vPm3n0qtw2xX+XE/nZefuTIkTTkuRfTgkXftUc79m3L1m1p4BNPNbwX0D0CCzV1J7Dxfem69RuKQFZNRC0iF8Est4nwHTp0uHg9tovInjhxovg/Zs+evalv/4cbPqezZgL7+x+rK/dr9+496Z77+zW8H9A8gYWauhPYmbPntEcsojZt+oz05DND0txv56dTp04Xy+Nv3K9abrN6zdpi+blz59KXM2cX8Y17WX9avqJYHjNv/sKGz+nsUoGNibgvWbqs2J9Zc75u35/43A8+/Kjh/YDmCSzU1Gxg4yhw7959xXoRrclTpja8Hkeu5URUO28TQR40+On29SPCZQQvFfZmArtm7br2I+f4G/+X8/0Pi9u3AbpHYKGmZgP7/NCX0rFjx4r1OscyjB77TnswI6oR17j1ZueuXcWy2Dbeo1z/vfETiu9uY8ogd6WZwMbRdMdt4qKpclxABfUJLNTUbGA7HnHGBU739e3f5etlYGN5PHmpPK0cFx0Ne3lkev3N0Wn/gQPFsji1e6lTuM0EtuPyILBweQgs1JTzCDaW/9+FUVUXRVURWGgdgYWamg1sne9gQ1whvGnzluJ08LbtO9L6DRsLcWFT50h3RWChdQQWauoY2H379qfpM764yISJk4r7VOtcRVyG7p+2tjTgsccbPrtZAgutI7BQU8fAdjXlKd843bvqt98rT/fGVJ3yXbHy5wuvVk/cF/vj4qXptjvubtivjgQWWkdgoabuBDbWj3hWPcnp7507K5/kFKeI4ylPXUW5nHhQRFffxQostI7AQg8UR6VxdBoP9I9TxF/NmtNw6nn5ipWVF0YBPYfAQg8Uv5ZTHrl+M3feRUeoQ4ePKH6CLibul+3qJ+uA1hFY6IHGvft+8UD/cuJUclwcFeK71zK+8Wzit94eV/keQGsJLPRQw0e8UtwHG1Ht+D1sfH/b1naweIxh/NpO1bZA6wksAGQgsACQgcACQAYCCwAZCCwAZCCwAJCBwAJABgILABkILABkILAAkIHAAkAGAgsAGQgsAGQgsACQgcACQAYCCwAZCCwAZCCwAJCBwAJABgILABkILABk0CsZY4wx5jJPSv8BNxST7+zNiU8AAAAASUVORK5CYII=" InformativeScreenshot="e84b09fb9ac1ea247053caba82eada98.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Log in to Twitter / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <Delay Duration="00:00:04" sap:VirtualizedContainerService.HintSize="632,52.8" sap2010:WorkflowViewState.IdRef="Delay_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </Delay>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[MessageDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="632,1070.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="598.4,952.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="536,188" sap2010:WorkflowViewState.IdRef="GetRowItem_1" Row="[CurrentRow]">
+                      <ui:GetRowItem.Value>
+                        <OutArgument x:TypeArguments="x:String">[TwitterAction]</OutArgument>
+                      </ui:GetRowItem.Value>
+                    </ui:GetRowItem>
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[TwitterAction]" sap:VirtualizedContainerService.HintSize="536,609.6" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Sequence x:Key="Tweet" sap:VirtualizedContainerService.HintSize="496,579.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="GetRowItem_2" Row="[CurrentRow]">
+                          <ui:GetRowItem.Value>
+                            <OutArgument x:TypeArguments="x:String">[TweetContent]</OutArgument>
+                          </ui:GetRowItem.Value>
+                        </ui:GetRowItem>
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[FbCheckPost]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Posting.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Posting.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="TweetContent">[TweetContent]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="Facebook">[FbCheckPost]</InArgument>
+                            <InArgument x:TypeArguments="ui:UiElement" x:Key="TBrowser">[TwBrowser]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                      <Sequence x:Key="Reply" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="1" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="GetRowItem_3" Row="[CurrentRow]">
+                          <ui:GetRowItem.Value>
+                            <OutArgument x:TypeArguments="x:String">[RepliedPerson]</OutArgument>
+                          </ui:GetRowItem.Value>
+                        </ui:GetRowItem>
+                        <ui:GetRowItem Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="2" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="433.6,188" sap2010:WorkflowViewState.IdRef="GetRowItem_4" Row="[CurrentRow]">
+                          <ui:GetRowItem.Value>
+                            <OutArgument x:TypeArguments="x:String">[TheMessage]</OutArgument>
+                          </ui:GetRowItem.Value>
+                        </ui:GetRowItem>
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[FbCheckReply]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Reply.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Reply.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:String" x:Key="Username">[Username]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="TwRepliedPerson">[RepliedPerson]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="TwMessage">[TheMessage]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="FbCheckReply">[FbCheckReply]</InArgument>
+                            <InArgument x:TypeArguments="ui:UiElement" x:Key="Tbroswer">[TwBrowser]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                      <Sequence x:Key="LogoutT" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'SVG'" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://twitter.com/home" DesignTimeRectangle="442, 989, 23, 23" DesignTimeScaleFactor="1.25" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;header&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;svg' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='svg' class='r-18jsvk2 r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-bnwqim r-1plcrui r-lrvibr' aaname='' /&gt;" Guid="f084629c-b61b-4eb0-911d-6e8db9d8fd71" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB0SURBVEhLY/hPRzBqGVXAqGVUAaOWUQWMQMsePnz0//CRo1AeKiBXDqtlmTkF//lFJMEYxEYG5MqBAFbLYBpAWNfQDCoKAeTKgQBWy9q7euCa0F1IrhwI4I0zEMYGyJXDaRktwKhlVAGjllEFjFpGBfD/PwCLh/9XoaEBLgAAAABJRU5ErkJggg==" InformativeScreenshot="cd71717ad89c7144362baad837368721.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) Home / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Log out @Ga3farBot2001'" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://twitter.com/home" DesignTimeRectangle="142, 877, 375, 55" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Log out @Ga3farBot2001'" FullSelectorArgument="&lt;webctrl aaname='Log out @Ga3farBot2001' aria-role='menuitem' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Log out @Ga3farBot2001' aria-role='menuitem' tag='A' type='' class='css-4rbku5 css-18t94o4 css-1dbjc4n r-1loqt21 r-18u37iz r-1ny4l3l r-ymttw5 r-1f1sjgu r-o7ynqc r-6416eg r-13qz1uu' check:innerText='Log out @Ga3farBot2001' /&gt;" Guid="122be4c0-b2c9-49bb-8eba-7d67441dbfd0" ImageBase64="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" InformativeScreenshot="ca3403d7cdba8ac4355bc732dbdbaee1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) Home / Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <uix:NClick ClickType="Single" DisplayName="Click 'Log out'" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3b9f0008-fa65-48bd-9ca3-877808e8f309" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://twitter.com/logout" DesignTimeRectangle="840, 642, 258, 53" DesignTimeScaleFactor="1.25" FriendlyName="'Log out'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='layers' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='layers' tag='DIV' class='css-901oao r-1awozwy r-jwli3a r-6koalj r-18u37iz r-16y2uox r-37j5jr r-a023e6 r-b88u0q r-1777fci r-rjixqe r-bcqeeo r-q4m81j r-qvutc0' aaname='' check:innerText='Log out' /&gt;" Guid="2befde90-2f0a-44d6-beaa-cac6878498d8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQYAAAA5CAYAAADUboXwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKESURBVHhe7dxBbtpAFIDh3KCbbnLWZJOrZME9Ii6BOAU5wZQCxmO/GXuQWjpyv5G+DTbYWbzfxkh5SZZlWbMlDJZlhfXy4+drAsgJAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIAxAIQ0c+j7d/0ZuO6bOwfVt26XD5W7/T13tpO/+SMHTkuWEYBjOlw660/e9623/fji4MPRKGjjwvDB/p63Q71HkJA3PC0JGHwvC+T9lsX9dx177vebUFYRqR64rnVx307Nin/Uf1XC6rdv48nTB0pDUM4xCW1vS9xYHdDQdauVovDfF55WERhm0Rho40hSEfrNM+vQ2v34f9vO4Dll3tJ0NXez2X3ynkwz4+m8jPszkMa/vTBWHoSEsYlgZqfP+wLRviSQBqr2cqA32RRWjYJgzbIgwdaQnD0j6lYWt9LciGPzyLKAy7MGyLMHTkz4VhNsz514xh5V9DShrDMNxxCMO2CENHWsKwNFDj+8dtw/75UDapDPTFI18lCvsu7k8XhKEjLWGYXK1XHz6On/lwGB58+Fg+/vSnzsk5VIJBH4ShI2MYKivctpdWHpWP82cu7bsylHmECmv6FSMPRrZOx3S4fcjkWKXPrj0I5emEoSOtYbh4YLCWQ7J2xZ5e9a+rckczP6fLHc34/nCc+f7C0A1h2LTxKh4eIOYDbyCZEYYNG+8Uylf4+x3K2i8U/HeEYcuyW/VwG39/+OdXASJh2LzKQ8Hfy1cIKoQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBCIQBmHlNvwColY+UJV4jKAAAAABJRU5ErkJggg==" InformativeScreenshot="0161d8e5db20a1c9581c1a4aabf97856.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(1) Twitter' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NClick>
+                        <ui:Break sap:VirtualizedContainerService.HintSize="387.2,24.8" sap2010:WorkflowViewState.IdRef="Break_1" />
+                      </Sequence>
+                      <Sequence x:Key="Check tweets number" sap:VirtualizedContainerService.HintSize="496,351.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[FbCheckNumber]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="PostsNumber.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="PostsNumber.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="ui:UiElement" x:Key="TwBrowser">[TwBrowser]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="FbCheckNumber">[FbCheckNumber]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </Switch>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAZ5JREFUWEftVu1NwzAQ7Qj9SVXHygiMwAiMwAjdgI7AvypOpbAB3YBuQDeADS6dAO6dLlLS2MYuQUIoT3pS09yX78OXxYwZ/wZmR3embl+LuiXmZ+Ha98Kdm5sdlSoigNyyoaU+DrF29LCuaKOPybD1+VGcBmgq2sKuBMhBqdoYhaMDFHKCQNCXDkO0nJWSM8I6t6o+BEf41gkbPpX+HUWx51T3nIRouTTGtS8iv6d7VR+iH4CQI0bN9PUIeDeQTyFnTNXHMI6efEqo3aoaR52TfnAVOnmHsqESqfIpKyWN0lDS9fHmuyTqr678wHjYmjY+5SkYHL8OpqYPGZXExsokqZswQj0wBdn2Ud2EUfJ8+pSnIA6nbuL4rR4IXj4+YFbthH2QlP4+LMaMU/bNSKYzdvn4wNOQf8OFGFs+MXAvbL0GM9gtHzWZD6SOefIZTyEyqaZ+Boxndj/k1t0HONb7Ptm5rN1rTo4dje2Grxc0zlXXMY/bFDU/eo3HyDqT1RuQtcx3ARs+ME/9+stvNGZFz5Bh2fiGmzHjb2Ox+AIy7SQ40GgWLwAAAABJRU5ErkJggg==" InformativeScreenshot="da8a24e93958b8ae3b105974fe2dbd59.jpg" Selector="&lt;html app='chrome.exe' title='Explore / Twitter' /&gt;" Title="Explore / Twitter" Url="https://twitter.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
