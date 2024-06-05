@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dajnbTWUwyvwfTSr8PSwX02OyQHWEup65FqN2A7zCF57fHj7YzeYBen3xHYQ12ZXrcXl2onsdSFpBcYSjSr2Dg==",
+  "dgSpecHash": "frVU09BSdsDSnEEDQd369dEh+1ad8LajRc14DxW0Y2xBVp+KzpkcphjCjiCFkBV+IyZBQhQ8H7UFylm/HiiqRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\legion\\Documents\\UiPath\\Project_Final\\.local\\",
   "expectedPackageFiles": [
@@ -148,8 +148,6 @@
     "C:\\Users\\legion\\.nuget\\packages\\runtime.win.system.net.primitives\\4.3.0\\runtime.win.system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\legion\\.nuget\\packages\\runtime.win.system.net.sockets\\4.3.0\\runtime.win.system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\legion\\.nuget\\packages\\runtime.win.system.runtime.extensions\\4.3.0\\runtime.win.system.runtime.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\legion\\.nuget\\packages\\runtime.win7-x64.runtime.native.system.io.compression\\4.3.0\\runtime.win7-x64.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
-    "C:\\Users\\legion\\.nuget\\packages\\runtime.win7.system.private.uri\\4.3.0\\runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\legion\\.nuget\\packages\\sharpziplib\\1.3.3\\sharpziplib.1.3.3.nupkg.sha512",
     "C:\\Users\\legion\\.nuget\\packages\\system.activities.viewmodels\\1.0.0-20220715.4\\system.activities.viewmodels.1.0.0-20220715.4.nupkg.sha512",
     "C:\\Users\\legion\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
